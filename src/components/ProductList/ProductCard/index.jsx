@@ -1,6 +1,8 @@
+
+
 export const ProductCard = ({ product }) => {
     return(
-        <li>
+        <li className="productCard">
             <img src={product.img} alt={product.name} />
             <div>
                 <h3>{product.name}</h3>

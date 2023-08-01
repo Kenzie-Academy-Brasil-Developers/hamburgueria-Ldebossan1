@@ -1,0 +1,25 @@
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    width: 100%;
+    height: 3.125rem;
+    border-radius: 0.3125rem 0.3125rem 0rem 0rem;
+    padding: 0.8125rem 1.375rem;
+    gap: 0.625rem;
+}
+
+.modalTitle {
+    font-size: 1.125rem;
+    font-family: var(--font-family);
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: var(--gray-0);
+  }
+  
+  .modalButton {
+      background-color: transparent;
+      color: #FFFFFF80;
+
+  }

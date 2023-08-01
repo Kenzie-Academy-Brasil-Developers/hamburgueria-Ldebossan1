@@ -1,0 +1,29 @@
+@import "./global.scss";
+
+
+.buttonGreen {
+    width: 3.3125rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--gray-0);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonGray {
+    width: 6.625rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color:var(--gray-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.buttonGray:hover {
+    background-color: var(--color-primary);
+}
