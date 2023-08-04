@@ -24,8 +24,7 @@ export const Header = ({ productList, setProductList, cartList, setVisible, filt
                />
                <button onClick={(e) => {
                   e.preventDefault()
-                  filterProductList(productList)
-                  console.log('click')
+                  filterProductList(value)
                }} className="buttonGreen" type="submit">
                  <MdSearch size={21} />
                </button>

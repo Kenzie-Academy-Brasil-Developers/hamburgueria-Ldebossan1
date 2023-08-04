@@ -4,10 +4,14 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import axios from "axios";
 import { api } from "../../api";
+import { toast } from "react-toastify";
+
+
 
 export const HomePage = () => {
   const [productList, setProductList] = useState([]);
   const [cartList, setCartList] = useState([]);
+  const [filteredList, setFilteredList] = useState([])
 
   // useEffect montagem - carrega os produtos da API e joga em productList
   useEffect(() => {
@@ -15,21 +19,23 @@ export const HomePage = () => {
       try {
         const { data } = await api.get("/products");
         setProductList(data);
+        setFilteredList(data)
       } catch (error) {
         console.log(error);
       }
     };
     getProducts();
-  });
+  }, []);
 
   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
   // adição, exclusão, e exclusão geral do carrinho
   const addProduct = (product) => {
     const verifyProduct = cartList.find(element => element.id === product.id)
     if(verifyProduct) {
-      alert('Item já adicionado')
+      toast.warning('Produto já adicionado ao carrinho')
     } else {
       setCartList((cartList) => [...cartList, product] )
+      toast.success('Produto adicionado ao carrinho')
     }
   };
 
@@ -44,22 +50,20 @@ export const HomePage = () => {
   // renderizações condições e o estado para exibir ou não o carrinho
   const [isVisible, setVisible] = useState(false);
   // filtro de busca
-  const [query, setQuery] = useState("");
 
-   const filterProductList = (productList) => {
+   const filterProductList = (value) => {
      const filteredArray = productList.filter((product) =>
-       product.name.toUpperCase().includes(query.toUpperCase())
+       product.name.toUpperCase().includes(value.toUpperCase())
      );
-     setProductList(filteredArray);
+     setFilteredList(filteredArray);
    };
-
   // estilizar tudo com sass de forma responsiva
-
+   console.log(filteredList)
   return (
     <>
       <Header productList={productList} setProductList={setProductList} filterProductList={filterProductList} cartList={cartList} setVisible={setVisible} />
       <main>
-        <ProductList addProduct={addProduct} productList={productList} />
+        <ProductList addProduct={addProduct} productList={filteredList} />
         {isVisible ? (
           <CartModal
             removeProduct={removeProduct}
