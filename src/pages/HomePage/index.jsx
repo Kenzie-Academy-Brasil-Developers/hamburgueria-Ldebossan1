@@ -10,8 +10,9 @@ import { toast } from "react-toastify";
 
 export const HomePage = () => {
   const [productList, setProductList] = useState([]);
-  const [cartList, setCartList] = useState([]);
   const [filteredList, setFilteredList] = useState([])
+  const getCartLocalStorage = localStorage.getItem('@CARTLIST')
+  const [cartList, setCartList] = useState(getCartLocalStorage ? JSON.parse(getCartLocalStorage) : []);
 
   // useEffect montagem - carrega os produtos da API e joga em productList
   useEffect(() => {
@@ -28,6 +29,9 @@ export const HomePage = () => {
   }, []);
 
   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
+  useEffect(() => {
+    localStorage.setItem('@CARTLIST', JSON.stringify(cartList))
+  },[cartList])
   // adição, exclusão, e exclusão geral do carrinho
   const addProduct = (product) => {
     const verifyProduct = cartList.find(element => element.id === product.id)
