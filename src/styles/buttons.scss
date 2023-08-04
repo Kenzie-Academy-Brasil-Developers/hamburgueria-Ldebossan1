@@ -17,11 +17,14 @@
     width: 6.625rem;
     height: 2.5rem;
     border-radius: 0.5rem;
-    background-color:var(--gray-100);
+    background-color:var(--gray-300);
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: var(--font-family);
 }
 
 .buttonGray:hover {

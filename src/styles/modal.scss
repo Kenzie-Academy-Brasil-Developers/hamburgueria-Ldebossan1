@@ -1,25 +1,103 @@
 .modalHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-primary);
-    width: 100%;
-    height: 3.125rem;
-    border-radius: 0.3125rem 0.3125rem 0rem 0rem;
-    padding: 0.8125rem 1.375rem;
-    gap: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  width: 100%;
+  height: 3.125rem;
+  border-radius: 0.3125rem 0.3125rem 0rem 0rem;
+  padding: 5px 22px;
+  gap: 10px;
 }
 
 .modalTitle {
-    font-size: 1.125rem;
-    font-family: var(--font-family);
-    font-weight: 700;
-    line-height: 1.5rem;
-    color: var(--gray-0);
+  font-size: 1.125rem;
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: var(--gray-0);
+}
+
+.modalButton {
+  background-color: transparent;
+  color: #ffffff80;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 31.25rem;
+    width: 100%;
+    height: 23.1875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .modalItemTitle {
+    margin-top: 1.1875rem;
+  }
+
+  .modalList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.625rem;
+    width: 100%;
+    height:250px ;
+    overflow: auto;
   }
   
-  .modalButton {
-      background-color: transparent;
-      color: #FFFFFF80;
+  .imgModal {
+    width: 5.125rem;
+    height: 5rem;
+  }
 
+  .modalProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cardDetails {
+    display: flex;
+  }
+
+  .totalValue {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    padding-bottom: 10px;
+  }
+
+  .buttonModal {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 0.625rem;
+  }
+
+  .deleteButton {
+    background-color: transparent;
+    color: var(--gray-100);
+    cursor: pointer;
+    height: 0.625rem;
+    margin-top: 1.25rem;
   }

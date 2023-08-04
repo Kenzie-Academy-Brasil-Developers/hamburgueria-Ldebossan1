@@ -1,11 +1,19 @@
-.productList {
-  display: flex;
-  justify-content: center;
-  margin: 1.875rem 0.625rem;
-  flex-wrap: wrap;
-  width: 80%;
-  height: auto;
-  gap: 3.125rem;
-}
 
+  .productList {
+    display: flex;
+    flex-direction: row;
+   
+    gap: 3.125rem 3.125rem;
 
+    padding: 1rem;
+    margin: 1rem auto;
+    overflow: auto;
+  }
+  @media (min-width: 720px) {
+    .productList {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+    }
+  }
